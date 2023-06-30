@@ -1,0 +1,25 @@
+Author Related
+-----------------------
+// user withing the_post();
+<?php
+    $author_avatar_url = get_avatar_url(get_the_author_meta('ID'));
+    $author_name = get_the_author_meta('display_name');
+    if ($author_avatar_url) {
+        echo '<img class="rounded-circle mr-2" src="' . esc_url($author_avatar_url) . '" width="25" height="25" alt="Author Avatar" />';
+    }
+    if ($author_name) {
+        echo '<small>' . esc_html($author_name) . '</small>';
+    }
+?>
+
+
+<?php
+	$author_avatar_url = get_avatar_url(get_the_author_meta('ID'));
+	$author_name = get_the_author_meta('display_name');
+	if ($author_avatar_url) {
+	    echo '<img class="rounded-circle mr-2" src="' . esc_url($author_avatar_url) . '" width="25" height="25" alt="Author Avatar" />';
+	}
+	if ($author_name) {
+	    echo '<span>' . esc_html($author_name) . '</span>';
+	}
+?>

@@ -1,0 +1,12 @@
+/**
+ * Saypoint: Custom style
+ */
+
+.navbar-dark .navbar-nav .active {
+  color: #1E2024;
+  background: #FFCC00;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: #1E2024 !important;
+}
