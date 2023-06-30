@@ -28,20 +28,20 @@ if ( ! function_exists( 'doot_setup' ) ) {
 		/**
 		 * Add post-formats support.
 		 */
-		// add_theme_support(
-		// 	'post-formats',
-		// 	array(
-		// 		'link',
-		// 		'aside',
-		// 		'gallery',
-		// 		'image',
-		// 		'quote',
-		// 		'status',
-		// 		'video',
-		// 		'audio',
-		// 		'chat',
-		// 	)
-		// );
+		add_theme_support(
+			'post-formats',
+			array(
+				'link',
+				'aside',
+				'gallery',
+				'image',
+				'quote',
+				'status',
+				'video',
+				'audio',
+				'chat',
+			)
+		);
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
