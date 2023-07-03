@@ -196,115 +196,113 @@
                             </div>
                         </div>
 
-                        <?php 
+                        <?php
+                        $posts = get_posts(array(
+                            'orderby'        => 'date',
+                            'posts_per_page' => 12,
+                        ));
+                   
+                        if ($posts) {
                             $count = 0; // Initialize the count variable
-                            if (have_posts()) {
-                                while (have_posts()) {
-                                    the_post();
-                                    $count++;   
-                                    $post_title = max_len(get_the_title(), 30);
+                            foreach ($posts as $post) {
+                                $title = max_len($post->post_title, 26);
+                                $excerpt= get_the_excerpt();
+                                $url = get_permalink($post);
+                                $categories = get_the_category($post);
+
+                                $count++;  
+                                if ($count <= 4) {     
+                                    echo '<div class="col-lg-6">';
+                                    echo '<div class="position-relative mb-3">';
+                                    echo '<img class="img-fluid w-100" src="'. get_the_post_thumbnail_url($post, 'full'). '" alt="'.$title.'" style="object-fit: cover;">';
+                                    echo '<div class="bg-white border border-top-0 p-4">';
+                                    echo '<div class="mb-2">';
+
+                                    if ($categories) {
+                                        $cat_count=0;    // counting for category
+                                        foreach ($categories as $category) {
+                                            $category_link = get_category_link($category);
+                                            $category_name = max_len($category->name, 10);                                
+                                            $cat_count++;
+                                            // Total no of category to display must be upto 2
+                                            if ($cat_count <= 2) {
+                                                echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="' . $category_link . '">' . $category_name . '</a>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '<small>'. get_the_date('', $post). '</small>';
+                                    echo '</div>';
+                                    echo '<a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="'. $url .'">'. $title .'</a>';
+                                    echo $excerpt;
+                                    echo '</div>';
+                                    echo '</div>';   
+                                    echo '</div>'; 
+                                }  // if
+                                elseif ($count <= 8) {
+                                    echo '<div class="col-lg-6">';
+                                    echo '<div class="position-relative mb-3">';
+                                    echo '<img class="img-fluid w-100" src="'. get_the_post_thumbnail_url($post, 'full'). '" alt="'.$title.'" style="object-fit: cover;">';
+                                    echo '<div class="bg-white border border-top-0 p-4">';
+                                    echo '<div class="mb-2">';
+
+                                    if ($categories) {
+                                        $cat_count=0;    // counting for category
+                                        foreach ($categories as $category) {
+                                            $category_link = get_category_link($category);
+                                            $category_name = max_len($category->name, 10);                                
+                                            $cat_count++;
+                                            // Total no of category to display must be upto 2
+                                            if ($cat_count <= 2) {
+                                                echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="' . $category_link . '">' . $category_name . '</a>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '<small>'. get_the_date('', $post). '</small>';
+                                    echo '</div>';
+                                    echo '<a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="'. $url .'">'. $title .'</a>';
+                                    echo '</div>';
+                                    echo '</div>';   
+                                    echo '</div>'; 
+                                }
+                                elseif ($count <= 12) {
+                                    echo '<div class="col-lg-6">';
+                                    echo '<div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">';
+                                    echo '<img class="img-fluid" src="'. get_the_post_thumbnail_url($post, 'thumbnail'). '" alt="'.$title.'" width="110" height="110">';
+                                    echo '<div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">';
+                                    echo '<div class="mb-2">';
+
+                                    if ($categories) {
+                                        $cat_count=0;    // counting for category
+                                        foreach ($categories as $category) {
+                                            $category_link = get_category_link($category);
+                                            $category_name = max_len($category->name, 10);                                
+                                            $cat_count++;
+                                            // Total no of category to display must be upto 2
+                                            if ($cat_count <= 1) {
+                                                echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="' . $category_link . '">' . $category_name . '</a>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '<small>'. get_the_date('', $post). '</small>';
+                                    echo '</div>';
+                                    echo '<a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="'. $url .'">'. $title .'</a>';
+                                    echo '</div>';
+                                    echo '</div>';   
+                                    echo '</div>'; 
+                                }
+                            }  // foreach
+                        }
+                        else {
+                            echo '<div class="col-12">';
+                            echo '<div class="bg-white border border-top-0 p-4">';
+                            echo '<p class="m-0 text-uppercase font-weight-bold">No items to display </p>';
+                            echo '</div>';
+                            echo '</div>';
+                        }  
                         ?>
-
-                            <?php if ($count <= 4) { ?>
-
-                                <div class="col-lg-6">
-                                    <div class="position-relative mb-3">
-                                        <?php if (has_post_thumbnail()) { ?>
-                                            <img class="img-fluid w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" style="object-fit: cover;">
-                                        <?php } ?>
-                                        
-                                        <div class="bg-white border border-top-0 p-4">
-                                            <div class="mb-2">                                            
-                                                <?php 
-                                                    $categories = get_the_category();
-                                                    if (!empty($categories)) {
-                                                        $cat_count=0;    // counting for category
-                                                        foreach ($categories as $category) {
-                                                            $cat_count++;
-                                                            // Total no of category to display must be upto 2
-                                                            if ($cat_count <= 2) {
-                                                            echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html(max_len($category->name, 10)) . '</a>';
-                                                            }
-                                                        }
-                                                    }
-                                                ?>                                            
-                                                <small> <?php echo get_the_date(); ?> </small>
-                                            </div>
-                                            <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="<?php echo get_permalink() ?>"> <?php echo $post_title; ?> </a>
-                                            <?php the_excerpt(); ?> 
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <?php } elseif ($count <= 8) { ?>
-
-                                <div class="col-lg-6">
-                                    <div class="position-relative mb-3">
-                                        <?php if (has_post_thumbnail()) { ?>
-                                            <img class="img-fluid w-100" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" style="object-fit: cover;">
-                                        <?php } ?>
-                                        
-                                        <div class="bg-white border border-top-0 p-4">
-                                            <div class="mb-2">                                            
-                                                <?php 
-                                                    $categories = get_the_category();
-                                                    if (!empty($categories)) {
-                                                        $cat_count=0;    // counting for category
-                                                        foreach ($categories as $category) {
-                                                            $cat_count++;
-                                                            // Total no of category to display must be upto 2
-                                                            if ($cat_count <= 2) {
-                                                            echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html(max_len($category->name, 10)) . '</a>';
-                                                            }
-                                                        }
-                                                    }
-                                                ?>                                            
-                                                <small> <?php echo get_the_date(); ?> </small>
-                                            </div>
-                                            <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="<?php echo get_permalink() ?>"> <?php echo $post_title; ?> </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <?php } elseif ($count <= 12) { ?>
-
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                        <?php if (has_post_thumbnail()) { ?>
-                                            <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'thumbnail'); ?>" alt="<?php the_title(); ?>" width='110' height='110'>
-                                        <?php } ?>
-                                        <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                            <div class="mb-2">
-                                                <?php 
-                                                    $categories = get_the_category();
-                                                    if (!empty($categories)) {
-                                                        $cat_count=0;    // counting for category
-                                                        foreach ($categories as $category) {
-                                                            $cat_count++;
-                                                            // Total no of category to display must be upto 2
-                                                            if ($cat_count <= 1) {
-                                                            echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html(max_len($category->name, 10)) . '</a>';
-                                                            }
-                                                        }
-                                                    }
-                                                ?>                                                  
-                                                <small> <?php echo get_the_date(); ?> </small>
-                                            </div>
-                                            <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?php echo get_permalink() ?>"> <?php echo $post_title; ?> </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <?php } ?>
-                        <?php } ?>
-
-                        <?php } else { ?>
-                            <div class="col-12">
-                                <div class="bg-white border border-top-0 p-4">
-                                    <p class="m-0 text-uppercase font-weight-bold">No items to display </p>
-                                </div>
-                            </div>
-                        <?php } ?>
 
                     </div>
                 </div>
