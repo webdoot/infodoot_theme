@@ -48,7 +48,7 @@ if ( ! function_exists( 'doot_setup' ) ) {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		set_post_thumbnail_size( 800, 500 );
 
 		/*
 		 * Register menu
@@ -343,3 +343,14 @@ function doot_contact_form() {
 add_action( 'wp_ajax_nopriv_contact_form', 'doot_contact_form' );
 add_action( 'wp_ajax_contact_form', 'doot_contact_form' );
 
+/**
+ * Restrict the string length
+ */
+if ( ! function_exists( 'max_len' ) ) {
+	function max_len($str, $str_len=null){
+		if ($str_len && strlen($str) > $str_len) {
+		    return substr($str, 0, $str_len). '...';
+		}
+		else return $str;
+	}	
+}
