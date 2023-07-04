@@ -11,8 +11,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Infodoot theme">
-    <meta name="description" content="Infodoot theme">
 
 	<?php wp_head(); ?>
 </head>
