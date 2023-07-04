@@ -15,7 +15,7 @@
 
 <?php 
     // Display only on non search page
-    if (!is_search()) { 
+    if (!is_search() && !is_page()) { 
 ?>
     <!-- Popular News Start -->
     <div class="mb-3">

@@ -3,7 +3,7 @@
 ?>
     
     <!-- Contact Start -->
-    <div class="container-fluid mt-5 pt-3">
+    <div class="container-fluid my-3 pt-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
