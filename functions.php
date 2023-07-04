@@ -354,3 +354,8 @@ if ( ! function_exists( 'max_len' ) ) {
 		else return $str;
 	}	
 }
+
+
+
+
+
