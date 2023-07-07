@@ -1,8 +1,5 @@
 <?php 
-	// $custom_logo_id = get_theme_mod('custom_logo');
-	// echo wp_get_attachment_url(45);
-    // echo '<pre>', var_dump(get_categories()), '</pre>';
-                  
+    // Heder      
 ?>
 
 <!DOCTYPE html>

@@ -1,4 +1,8 @@
 <?php 
+    /**
+     * Default page for all page types
+     * Used for: Search result
+     */
     get_header();
 ?>
     

@@ -21,7 +21,7 @@
                                 }
                             ?>
                             <h4 class="m-0 text-uppercase font-weight-bold"><?php echo $query . ': ' . get_queried_object()->name; ?></h4>
-                            <span class="text-uppercase font-weight-bold">Total: <?php echo $wp_query->found_posts; ?> </span>
+                            <span class="text-uppercase font-weight-medium">Total: <?php echo $wp_query->found_posts; ?> </span>
                         </div>
                     </div>
 
