@@ -11,7 +11,7 @@
                     <div class="col-12">
                     <?php 
                         $args = array(
-                            'posts_per_page' => 30,     // no of article per page
+                            'posts_per_page' => 20,     // no of article per page
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
                         query_posts($args);
@@ -94,6 +94,9 @@
                         }
                         echo '</div>';
                         echo '</div>';
+
+                        // Reset Query
+                        wp_reset_query();
                     ?>                         
                     </div>                   
                 </div>
