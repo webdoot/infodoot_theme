@@ -49,9 +49,9 @@
                                 }
 
                                 // Second
-                                if ($current_page == 2) {
+                                if ($total_pages>2 && $current_page == 2) {
                                     echo '<li class="page-item mr-1"><a class="page-link text-dark active" href="#">2</a></li>'; 
-                                } else {
+                                } elseif ($total_pages>2) {
                                     echo '<li class="page-item mr-1"><a class="page-link text-dark" href="'. get_pagenum_link(2). '">2</a></li>';     
                                 }
                                                            
