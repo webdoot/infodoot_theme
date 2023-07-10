@@ -11,7 +11,7 @@
                     <div class="col-12">
                     <?php 
                         $args = array(
-                            'posts_per_page' => 3,     // no of article per page
+                            'posts_per_page' => 20,     // no of article per page
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
                         query_posts($args);
