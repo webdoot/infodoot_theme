@@ -3,16 +3,18 @@
  */
 
 .navbar-dark .navbar-nav .active {
-  color: #1E2024;
-  background: #FFCC00;
+	color: #1E2024;
+	background: #FFCC00;
 }
 
 .navbar-dark .navbar-nav .active > .nav-link {
-  color: #1E2024 !important;
+  	color: #1E2024 !important;
 }
 
 .page-item > a.active, 
-.page-link:hover {
-  background-color: #FFCC00 !important;
-  border-color: #e6b800 !important;
+.page-link:hover,
+.list-group-item-action:hover {
+	color: #000;
+  	background-color: #FFCC00 !important;
+  	border-color: #e6b800 !important;
 }

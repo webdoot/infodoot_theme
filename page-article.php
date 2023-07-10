@@ -76,9 +76,9 @@
                                 }
 
                                 // Last 
-                                if ($current_page == $total_pages) {
+                                if ($total_pages>1 && $current_page == $total_pages) {
                                     echo '<li class="page-item"><a class="page-link text-dark active" href="#">Last</a></li>'; 
-                                } else {
+                                } elseif ($total_pages>1) {
                                     echo '<li class="page-item"><a class="page-link text-dark" href="'. get_pagenum_link($total_pages). '">Last</a></li>';     
                                 }
 
