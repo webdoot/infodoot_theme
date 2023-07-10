@@ -71,7 +71,7 @@
                                 // pre last
                                 if ($total_pages>3 && $current_page == $total_pages-1) {
                                     echo '<li class="page-item mr-1"><a class="page-link text-dark active" href="#">'. ($total_pages-1). '</a></li>'; 
-                                } else {
+                                } elseif ($total_pages>3) {
                                     echo '<li class="page-item mr-1"><a class="page-link text-dark" href="'. get_pagenum_link($total_pages-1). '">'. ($total_pages-1). '</a></li>';     
                                 }
 
