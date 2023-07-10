@@ -10,3 +10,9 @@
 .navbar-dark .navbar-nav .active > .nav-link {
   color: #1E2024 !important;
 }
+
+.page-item > a.active, 
+.page-link:hover {
+  background-color: #FFCC00 !important;
+  border-color: #e6b800 !important;
+}
