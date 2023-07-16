@@ -1,3 +1,11 @@
+Mail: mail@infodoot.com [mail@online]
+Twitter: infodootid [Vik@12345]
+Facebook: webdoot.com
+Instagram: infodootpage [Vik@12345]
+
+https://www.seoptimer.com/infodoot.com
+
+
 Author Related
 -----------------------
 // user withing the_post();
