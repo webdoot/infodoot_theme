@@ -178,7 +178,7 @@ if ( ! function_exists( 'doot_scripts' ) ) {
 		wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css');			
 		
 		// Scripts				
-		wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array('jquery'), false, false);
+		wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js', array('jquery'), false, true);
 		wp_enqueue_script( 'easing', get_template_directory_uri() . '/assets/lib/easing/easing.min.js', array(), false, true);
 		wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/lib/owlcarousel/owl.carousel.min.js', array(), false, true);
 		wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);	

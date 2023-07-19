@@ -10,6 +10,10 @@ body {
 	color: #4d4d4d !important;
 }
 
+.light-gray {
+	color: #a6a6a6 !important;
+}
+
 .navbar-dark .navbar-nav .active {
 	color: #1E2024;
 	background: #FFCC00;
