@@ -18,7 +18,7 @@
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-white py-4 px-lg-5">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
             	<?php
 				if (function_exists('the_custom_logo')) {
 				    $custom_logo_id = get_theme_mod('custom_logo');
@@ -32,7 +32,7 @@
 				    </a>
 				<?php } ?>               
             </div>
-            <div class="col-lg-8 text-center text-lg-right">                
+            <div class="col-lg-9 text-center text-lg-right">                
                 <?php 
                     // if ( is_active_sidebar( 'header-banner-ad' ) ) { 
                     //      dynamic_sidebar( 'header-banner-ad' ); 
