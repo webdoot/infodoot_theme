@@ -2,6 +2,14 @@
  * Saypoint: Custom style
  */
 
+body {
+  color: #4d4d4d !important;
+}
+
+.text-body {
+	color: #4d4d4d !important;
+}
+
 .navbar-dark .navbar-nav .active {
 	color: #1E2024;
 	background: #FFCC00;
