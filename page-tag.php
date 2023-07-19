@@ -17,7 +17,7 @@
 
                         // Header
                         echo '<div class="section-title mb-0">';
-                        echo '<h4 class="m-0 text-uppercase font-weight-bold">Articles</h4>';
+                        echo '<h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>';
                         echo '</div>';
                         
                         if (!empty($tags)) {                            
