@@ -13,30 +13,30 @@
                         $tags = get_tags( array(
                             'orderby' => 'name',
                             'order'   => 'ASC'
-                        ) ); 
+                        ) );
 
                         // Header
                         echo '<div class="section-title mb-0">';
-                        echo '<h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>';
-                        echo '<span class="text-uppercase font-weight-medium">Total: '. count($tags). ' </span>';
+                        echo '<h4 class="m-0 text-uppercase font-weight-bold">Articles</h4>';
                         echo '</div>';
+                        
+                        if (!empty($tags)) {                            
+                            // Items
+                            echo '<div class="bg-white border border-top-0 p-3">';
+                            echo '<div class="list-group">'; 
 
-                        // Items
-                        echo '<div class="bg-white border border-top-0 p-3">';
-                        if (!empty($tags)) {
-                            foreach ($tags as $tag) {                                
-                                echo '<a href="'. esc_url( get_category_link( $tag->term_id ) ). '" class="btn btn-outline-secondary d-flex justify-content-between w-100 my-3 p-2">';
-                                echo '<span class="text-uppercase font-weight-bold m-0">'. esc_html($tag->name). '</span>';
-                                echo '<span class="font-weight-medium m-0">('. esc_html($tag->count). ')</span>';
-                                echo '</a>';
-                            }
+                            foreach ($tags as $tag) {
+                                echo '<a href="'. esc_url( get_category_link( $tag->term_id ) ). '" class="list-group-item list-group-item-action">'. esc_html($tag->name). '</a>';
+                            } 
+
+                            echo '</div>';      // .list-group                            
+                            echo '</div>';      // .bg-white                            
                         }
                         else {
                             echo '<div class="bg-white border border-top-0 p-4">';
-                            echo '<p class="m-0 text-uppercase font-weight-bold">No items to display </p>';
+                            echo '<p class="m-0 text-center text-uppercase font-weight-bold">No items to display </p>';
                             echo '</div>';
                         }
-                        echo '</div>';
                     ?>                         
                     </div>                   
                 </div>

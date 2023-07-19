@@ -19,19 +19,21 @@
                         // Header
                         echo '<div class="section-title mb-0">';
                         echo '<h4 class="m-0 text-uppercase font-weight-bold">Articles</h4>';
-                        echo '<span class="text-uppercase font-weight-medium">Total: '. wp_count_posts()->publish. ' </span>';
                         echo '</div>';
-
-                        // Items
-                        echo '<div class="bg-white border border-top-0 p-3">';
-                        echo '<div class="list-group">';
+                        
                         if (have_posts()) {
+                            // Items
+                            echo '<div class="bg-white border border-top-0 p-3">';
+                            echo '<div class="list-group">'; 
+
                             while (have_posts()) {
                                 the_post();
 
                                 echo '<a href="'. esc_url(get_permalink() ). '" class="list-group-item list-group-item-action">'. get_the_title(). '</a>';
                                 
                             } 
+
+                            echo '</div>';     // .list-group
 
                             global $wp_query;
                             $total_pages = $wp_query->max_num_pages;
@@ -86,14 +88,13 @@
                                 echo '</nav>';
                             }
                             
+                            echo '</div>';  // .bg-white                            
                         }
                         else {
-                            echo '<div class="bg-white border p-4">';
+                            echo '<div class="bg-white border border-top-0 p-4">';
                             echo '<p class="m-0 text-center text-uppercase font-weight-bold">No items to display </p>';
                             echo '</div>';
                         }
-                        echo '</div>';
-                        echo '</div>';
 
                         // Reset Query
                         wp_reset_query();
