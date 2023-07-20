@@ -25,7 +25,7 @@
 				    $logo_url = wp_get_attachment_image_src($custom_logo_id, 'medium');
 				    $logo_url_mob = get_theme_mod('mobile_logo');
 				    $logo_width = 300;
-				    $logo_width_mob = 180;
+				    $logo_width_mob = 270;
 				?>
 				    <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand p-0 d-none d-lg-block" rel="home">
 				        <img src="<?php echo esc_url($logo_url[0]); ?>" alt="Logo" width="<?php echo esc_attr($logo_width); ?>" >
