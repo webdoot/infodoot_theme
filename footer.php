@@ -6,9 +6,9 @@
                 <p class="font-weight-medium light-gray"><i class="fa fa-envelope mr-2"></i>MAIL@INFODOOT.COM</p>
                 <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6> 
                 <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://www.facebook.com/infodootpage"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://twitter.com/Infodootid"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://instagram.com/infodootpage"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://www.facebook.com/infodootpage" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://twitter.com/Infodootid" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://instagram.com/infodootpage" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>            
             </div>
             <div class="col-lg-6 col-md-6 mb-5">
