@@ -77,13 +77,13 @@
                         <?php
                         $posts = get_posts(array(
                             'orderby'        => 'date',
-                            'posts_per_page' => 12,
+                            'posts_per_page' => 16,
                         ));
                    
                         if ($posts) {
                             $count = 0; // Initialize the count variable
                             foreach ($posts as $post) {
-                                $title = max_len($post->post_title, 26);
+                                $title = max_len($post->post_title, 28);
                                 $excerpt= get_the_excerpt();
                                 $url = get_permalink($post);
                                 $categories = get_the_category($post);
@@ -148,6 +148,32 @@
                                     echo '<div class="col-lg-6">';
                                     echo '<div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">';
                                     echo '<img class="img-fluid" src="'. get_the_post_thumbnail_url($post, 'thumbnail'). '" alt="'.$title.'" width="110" height="110">';
+                                    echo '<div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">';
+                                    echo '<div class="mb-2">';
+
+                                    if ($categories) {
+                                        $cat_count=0;    // counting for category
+                                        foreach ($categories as $category) {
+                                            $category_link = get_category_link($category);
+                                            $category_name = max_len($category->name, 10);                                
+                                            $cat_count++;
+                                            // Total no of category to display must be upto 2
+                                            if ($cat_count <= 1) {
+                                                echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="' . $category_link . '">' . $category_name . '</a>';
+                                            }
+                                        }
+                                    }
+
+                                    echo '<small>'. get_the_date('', $post). '</small>';
+                                    echo '</div>';
+                                    echo '<a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="'. $url .'">'. $title .'</a>';
+                                    echo '</div>';
+                                    echo '</div>';   
+                                    echo '</div>'; 
+                                }
+                                else {
+                                    echo '<div class="col-lg-6">';
+                                    echo '<div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">';
                                     echo '<div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">';
                                     echo '<div class="mb-2">';
 
