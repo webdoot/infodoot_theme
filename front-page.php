@@ -173,7 +173,7 @@
                                 }
                                 else {
                                     echo '<div class="col-lg-6">';
-                                    echo '<div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">';
+                                    echo '<div class="d-flex align-items-center bg-white mb-3" style="height: 85px;">';
                                     echo '<div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">';
                                     echo '<div class="mb-2">';
 
