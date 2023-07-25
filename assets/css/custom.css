@@ -30,3 +30,10 @@ body {
   	background-color: #FFCC00 !important;
   	border-color: #e6b800 !important;
 }
+
+/* Links in post content */
+p>a {
+	color: #0059b3;
+}
+
+
