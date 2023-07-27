@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="m-0 text-center light-gray">&copy; <a href="#"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>. All Rights Reserved. Design by <a href="https://webdoot.com">WEBDOOT</a><br>
+        <p class="m-0 text-center light-gray">&copy; <a href="#" class="light-gray"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>. All Rights Reserved. Design by <a href="https://webdoot.com" class="light-gray">WEBDOOT</a><br>
     </p>
     </div>
     <!-- Footer End -->
