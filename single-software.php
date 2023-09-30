@@ -60,7 +60,7 @@
                                 <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post, 'thumbnail'); ?>" alt="logo" width="80" height="80">
                             </div>
                             <div class="col-md-8">
-                                <h1 class="h4 mt-md-2 mt-3 text-secondary text-uppercase font-weight-bold"><?php echo max_len(get_the_title(), 40); ?> <span class="ml-2 text-muted font-weight-normal"> <?php echo end(get_field('versions'))["text"]; ?> </span> </h1>
+                                <h1 class="h4 mt-md-2 mt-3 text-secondary text-uppercase font-weight-bold"><?php echo max_len(get_the_title(), 40); ?> for Windows <span class="ml-2 text-muted font-weight-normal"> <?php echo end(get_field('versions'))["text"]; ?> </span> </h1>
 
                                 <a class="h5 mt-2" href="<?php echo get_field('company_url'); ?>" style="color:#0059b3"><?php echo get_field('company'); ?> </a> 
                                 <span class="h5 text-uppercase mt-2 mr-3"> (<?php echo get_field('licence'); ?>) </span>

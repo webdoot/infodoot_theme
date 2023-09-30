@@ -47,8 +47,15 @@
                     
                     echo '<a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="'. $url .'">'. $title .'</a>'; 
 
-                    echo '<div class="my-1">';                              
-                    echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold py-1 px-2 mr-2">' . end($versions)['text'] . '</a>';
+                    echo '<div class="my-1">'; 
+                           
+                    $categories = get_the_terms($post->ID, 'software-category');
+                    if (!empty($categories)) {
+                        foreach ($categories as $category) {
+                            echo '<a class="badge badge-primary text-uppercase font-weight-semi-bold py-1 px-2 mr-2" href="'. esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                        }
+                    }
+                    
                     echo '<small class="text-body">'. $company. '</small>';
                     echo '</div>';
 
