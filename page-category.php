@@ -17,7 +17,7 @@
 
                         // Header
                         echo '<div class="section-title mb-0">';
-                        echo '<h4 class="m-0 text-uppercase font-weight-bold">Categories</h4>';
+                        echo '<h1 class="h4 m-0 text-uppercase font-weight-bold">Categories</h1>';
                         echo '</div>';
                         
                         if (!empty($categories)) {                            

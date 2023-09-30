@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold"> <?php if (is_search()) echo 'Search'; else echo 'Latest'; ?> </h4>
+                                <h1 class="h4 m-0 text-uppercase font-weight-bold"> <?php if (is_search()) echo 'Search'; else echo 'Latest'; ?> </h1>
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@
                 
                 <div class="col-lg-4">
                     <?php 
-                        get_sidebar('article');
+                        get_sidebar('home');
                     ?> 
                 </div>
             </div>

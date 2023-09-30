@@ -2,7 +2,7 @@
 	get_header();
 ?>
 
-<!-- Single Post With Sidebar Start -->
+<!-- Single Page -->
 <div class="container-fluid my-3 pt-3">
     <div class="container">
         <div class="row">
@@ -41,7 +41,7 @@
 
             <div class="col-lg-4">
                 <?php 
-                    get_sidebar();
+                    get_sidebar('home');
                 ?> 
             </div>
         </div>

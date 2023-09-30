@@ -36,4 +36,9 @@ p>a {
 	color: #0059b3;
 }
 
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1360px;
+  }
+}
 

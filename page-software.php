@@ -1,8 +1,8 @@
 <?php 
-    get_header();
+	get_header();
 ?>
 
-<!-- News With Sidebar Start -->
+<!-- Single Page -->
 <div class="container-fluid my-3 pt-3">
     <div class="container">
         <div class="row">
@@ -11,6 +11,7 @@
                     <div class="col-12">
                     <?php 
                         $args = array(
+                            'post_type' => 'software',
                             'posts_per_page' => 20,     // no of article per page
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
@@ -18,7 +19,7 @@
 
                         // Header
                         echo '<div class="section-title mb-0">';
-                        echo '<h1 class="h4 m-0 text-uppercase font-weight-bold">Articles</h1>';
+                        echo '<h1 class="h4 m-0 text-uppercase font-weight-bold">Softwares</h1>';
                         echo '</div>';
                         
                         if (have_posts()) {
@@ -28,13 +29,16 @@
 
                             while (have_posts()) {
                                 the_post();
-
-                                // echo '<a href="'. esc_url(get_permalink()). '" class="list-group-item list-group-item-action">'. get_the_title(). '</a>';
-
+                                
+                                echo '<a href="'. esc_url(get_permalink() ). '" >';
                                 echo '<div class="list-group-item list-group-item-action">';
-                                echo '<img class="rounded mr-3" src="'. get_the_post_thumbnail_url($post, "post-thumbnail"). '" width="56" height="35" alt="">';
-                                echo '<a href="'. esc_url(get_permalink()). '" class="list-group-item-action">'. get_the_title(). '</a>';
+                                echo '<img class="rounded mr-3" src="'. get_the_post_thumbnail_url($post, "post-thumbnail"). '" width="40" height="40" alt="">';
+                                // echo '<span class="font-weight-bold">'. get_the_title(). ' - '. end(get_field("versions"))["text"]. '</span>';
+                                echo '<span class="mr-2">'. get_the_title(). '</span> <span class="text-muted">'. end(get_field("versions"))["text"]. '</span>';
+
+                                echo '<sapan class="float-right text-muted pt-2">'. get_field("company"). '</span>';
                                 echo '</div>';
+                                echo '</a>';
                                 
                             } 
 
@@ -110,10 +114,10 @@
                     </div>                   
                 </div>
             </div>
-            
+
             <div class="col-lg-4">
                 <?php 
-                    get_sidebar('article');
+                    get_sidebar('software');
                 ?> 
             </div>
         </div>
@@ -122,5 +126,5 @@
 <!-- News With Sidebar End -->
 
 <?php 
-    get_footer(); 
+	get_footer(); 
 ?>

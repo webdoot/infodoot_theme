@@ -274,15 +274,17 @@ function doot_comment_form () {
 /**
  * Show all categories
  */
-function doot_show_catagories(){
+function doot_show_catagories($taxonomy_key='category'){	
 	$categories = get_categories( array(
+		'taxonomy' => $taxonomy_key,
         'orderby' => 'name',
         'order'   => 'ASC'
     ) );
-
+			
     foreach( $categories as $category ) {
         $category_link = sprintf( 
-            '<a href="%1$s" alt="%2$s" class="btn btn-sm btn-secondary m-1">%3$s</a>',
+            '<a href="%1$s" alt="%2$s" class="btn btn-sm btn-outline-secondary m-1">%3$s</a>',
+            // if in footer use <a class="btn-secondary" .
             esc_url( get_category_link( $category->term_id ) ),
             esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
             esc_html( $category->name )

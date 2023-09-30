@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Have Queries?</h4>
+                        <h1 class="h4 m-0 text-uppercase font-weight-bold">Have Queries?</h1>
                     </div>
                     <div class="bg-white border border-top-0 p-4 mb-3">
                         <div class="mb-4">

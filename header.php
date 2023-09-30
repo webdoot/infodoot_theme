@@ -1,5 +1,20 @@
 <?php 
     // Heder 
+    // global $wp_query;
+    // $categories = get_categories( array(
+    //         'taxonomy' => 'category',
+    //         'orderby' => 'name',
+    //         'order'   => 'ASC'
+    //     ) );
+
+    // print "<pre>";
+    // print_r($wp_query);
+    // // print_r(get_the_terms($posts_latest[0], 'software-category'));
+    // // print_r(get_queried_object());
+    // print "</pre>";
+    // echo is_archive();
+    // echo is_tax();
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +27,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	
     <!-- Topbar Start -->
@@ -54,17 +69,17 @@
             </button>
             
             <?php
-            if (has_nav_menu('primary')) {
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => 'div',
-                    'container_class' => 'collapse navbar-collapse justify-content-between px-0 px-lg-3 mt-3 mt-lg-0',
-                    'container_id' => 'navbarCollapse',
-                    'menu_class' => 'navbar-nav mr-auto py-0',
-                    'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                    'walker' => new wp_bootstrap_navwalker(),
-                ));
-            }
+                if (has_nav_menu('primary')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container'      => 'div',
+                        'container_class' => 'collapse navbar-collapse justify-content-between px-0 px-lg-3 mt-3 mt-lg-0',
+                        'container_id'   => 'navbarCollapse',
+                        'menu_class'     => 'navbar-nav mr-auto py-0',
+                        'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
+                        'walker'         => new wp_bootstrap_navwalker(),
+                    ));
+                }
             ?>
             
             <?php get_search_form(); ?>
