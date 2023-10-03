@@ -6,12 +6,12 @@
 <div class="container-fluid my-3 pt-3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 mb-3">
                 <div class="row">                    
                     <div class="col-12">
                     <?php 
                         $args = array(
-                            'posts_per_page' => 20,     // no of article per page
+                            'posts_per_page' => 25,     // no of article per page
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
                         query_posts($args);
@@ -93,7 +93,7 @@
                                 echo '</nav>';
                             }
                             else {
-                                echo '<br><br>';
+                                echo '<br>';
                             }
                             
                             echo '</div>';  // .bg-white                            
