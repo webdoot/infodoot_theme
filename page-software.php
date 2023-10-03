@@ -30,15 +30,15 @@
                             while (have_posts()) {
                                 the_post();
                                 
-                                echo '<a href="'. esc_url(get_permalink() ). '" >';
+                               
                                 echo '<div class="list-group-item list-group-item-action">';
                                 echo '<img class="rounded mr-3" src="'. get_the_post_thumbnail_url($post, "post-thumbnail"). '" width="40" height="40" alt="">';
+                                echo '<a href="'. esc_url(get_permalink() ). '" class="list-group-item-action">';
                                 echo '<span class="mr-1">'. get_the_title(). '</span> <span class="text-muted">'. end(get_field("versions"))["text"]. '</span>';
 
                                 echo '<sapan class="text-muted ml-3">'. get_field("company"). '</span>';
-                                echo '</div>';
                                 echo '</a>';
-                                
+                                echo '</div>';          
                             } 
 
                             echo '</div>';     // .list-group
