@@ -12,7 +12,7 @@
                     <?php 
                         $args = array(
                             'post_type' => 'software',
-                            'posts_per_page' => 25,     // no of article per page
+                            'posts_per_page' => 26,     // no of article per page
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
                         query_posts($args);
